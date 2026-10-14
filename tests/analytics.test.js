@@ -20,3 +20,10 @@ test('supports tied final winners after corrections',()=>{
  const corrected=structuredClone(p);corrected[1].scores=corrected[0].scores.slice();
  assert.deepEqual(leadersAt(corrected,18).map(x=>x.name),['Phil','Brad']);
 });
+test('each nine starts from zero and has independent standings and lead history',()=>{
+ assert.deepEqual(metrics(p,1,9).map(x=>[x.name,x.total,x.par]),[['Phil',28,10],['Brad',29,11],['Taryn',32,14]]);
+ assert.deepEqual(metrics(p,10,18).map(x=>[x.name,x.total,x.par]),[['Phil',22,4],['Brad',25,7],['Taryn',37,19]]);
+ assert.deepEqual(leadersAt(p,10,10).map(x=>x.name),['Phil','Brad','Taryn']);
+ assert.deepEqual(leadersAt(p,11,10).map(x=>x.name),['Brad']);
+ assert.equal(totalAt(p[0],9,10),0);
+});

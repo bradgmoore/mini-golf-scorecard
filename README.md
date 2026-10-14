@@ -33,3 +33,9 @@ npm start
 ```
 
 Open http://localhost:3000. The entire website is in `dist/`; GitHub Actions validates the calculations and publishes that folder to GitHub Pages on pushes to `main`. No package install is needed.
+
+## Creative scorekeeping and split views
+
+The **Commit fraud** switch is a reversible, labeled alternate scorecard: Brad receives the lowest recorded full-round scoreline, Phil receives the highest, and Taryn receives the remaining scoreline. It never overwrites recorded data or browser-saved edits. On the original card that produces Brad 50, Taryn 54, Phil 69; the alternate back-nine result is Brad 22, Taryn 25, Phil 37.
+
+Choose **Full round**, **Holes 1–9**, or **Holes 10–18** to update standings, the graph, replay, table, and Brad-versus-Phil hole wins/ties/losses. Nine-hole analytics start at zero. CSV exports include the selected section and identify alternate scores. Recorded back-nine standings remain Phil 22, Brad 25, Taryn 37.
